@@ -6,7 +6,7 @@ func pattern18(n: Int) {
     let letter = "ABCDE"
     for i in  1..<n {
         for j in 1...(n-i) {
-            let sub = letter.suffix(i)
+            let sub = letter.suffix(j)
             print(sub, terminator: " ")
         }
         print()
