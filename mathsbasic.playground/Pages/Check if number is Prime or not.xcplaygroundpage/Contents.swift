@@ -17,14 +17,15 @@ func isPrime(_ number: Int) -> Bool {
     
     return true
 }
-
-// Example usage:
-let number = 1
-if isPrime(number) {
-    print("\(number) is a prime number.")
-} else {
-    print("\(number) is not a prime number.")
-}
+isPrime(13)
+//
+//// Example usage:
+//let number = 1
+//if isPrime(number) {
+//    print("\(number) is a prime number.")
+//} else {
+//    print("\(number) is not a prime number.")
+//}
 
 
 //func checkPrime(num: Int) {
@@ -42,3 +43,12 @@ if isPrime(number) {
 //checkPrime(num: number)
 
 //: [Next](@next)
+
+//func checkifPrime(n: Int) -> Bool {
+//    for i in 2...n {
+//       = n % i
+//         
+//            print("Number is not a prime number")
+//        
+//    }
+//}

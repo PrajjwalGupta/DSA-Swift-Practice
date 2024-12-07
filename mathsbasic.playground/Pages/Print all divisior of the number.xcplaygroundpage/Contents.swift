@@ -10,20 +10,32 @@ import Foundation
 //}
 
 // print the list out
-func printDivisiors(num: Int)  {
-    var x = [Int]()
-    for i in 1...Int(sqrt(Double(num))) {
-        if num % i == 0 {
-            x.append(i)
-            if i != num / i {
-                x.append(num / i)
-            }
-        }
-}
-    x.sort()
-    
-}
-let number = 543
-printDivisiors(num: number)
+//func printDivisiors(num: Int)  {
+//    var x = [Int]()
+//    for i in 1...Int(sqrt(Double(num))) {
+//        if num % i == 0 {
+//            x.append(i)
+//            if i != num / i {
+//                x.append(num / i)
+//            }
+//        }
+//}
+//    x.sort()
+//    
+//}
+//let number = 543
+//printDivisiors(num: number)
 
 //: [Next](@next)
+
+func printdivisor(num: Int) -> [Int] {
+    var DivisorList: [Int] = []
+    for i in 1...num {
+        let a = num % i
+        if a == 0 {
+            DivisorList.append(i)
+        }
+    }
+    return DivisorList
+}
+printdivisor(num: 77)

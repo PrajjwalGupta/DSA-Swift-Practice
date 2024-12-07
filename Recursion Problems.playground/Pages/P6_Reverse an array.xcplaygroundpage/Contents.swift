@@ -1,22 +1,44 @@
 //: [Previous](@previous)
 
 import Foundation
-//import UIKit
-//var n = 5
-//var arr = [Int]()
-//for i in 0...n-1 {
-//    arr.append(i)
-//    print(arr[i])
+
+//func reverseArray(arr: [Int], f: Int, l: Int) {
+//    var array = arr
+//   // var newArr: [Int] = []
+//    var f = array.startIndex
+//    var l = array.endIndex
+//    if (f == l) { return }
+//    array.swapAt(f, l)
+//    //newArr.append(arr[f])
+//    reverseArray(arr: arr, f: f+1, l: l-1)
+//    print(array)
+//}
+//let array1 = [2, 3, 4, 5, 6]
+//reverseArray(arr: array1, f: array1.startIndex, l: array1.endIndex)
+
+//func reverseArray(arr: inout [Int], f: Int, l: Int) {
+//    if f >= l { return } // Base case: stop when indices cross or are equal
+//
+//    arr.swapAt(f, l) // Swap elements at f and l
+//    reverseArray(arr: &arr, f: f + 1, l: l - 1) // Recursive call with updated indices
 //}
 
-func reverseArray(l: Int, r: Int) {
-    var arr = [Int]()
-    let l = arr.startIndex
-    let r = arr.endIndex
-    if (l >= r) { return }
-    arr.swapAt(l, r)
-    reverseArray(l: l+1, r: r-1)
+// Example usage:
+var array1 = [2, 3, 4, 5, 6]
+//reverseArray(arr: &array1, f: array1.startIndex, l: array1.endIndex - 1)
+//print(array1)
+
+
+// Now using one pointer i
+
+
+func reverseArr(arr: inout [Int], index: Int) {
+    let n = arr.count
+    if index >= n / 2 { return } // Base case: stop recursion when index reaches the halfway point
+    arr.swapAt(index, n - index - 1) // Swap elements
+    reverseArr(arr: &arr, index: index + 1) // Recurse with the next index
 }
-let array = [2, 3, 4, 5, 6]
-reverseArray(l: 0, r: array.count-1)
-print(array)
+reverseArr(arr: &array1, index: 0)
+print(array1)
+
+

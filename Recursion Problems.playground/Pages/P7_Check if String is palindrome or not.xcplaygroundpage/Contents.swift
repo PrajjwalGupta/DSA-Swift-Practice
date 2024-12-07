@@ -28,7 +28,22 @@ import Foundation
 //let testString = "A man, a plan, a canal: Panama"
 //print(isPalindrome(testString))  // Output: true
 
-
+func checkIfPalindrome(_ str: String, index: Int) -> Bool {
+    var n = str.count
+    let fc = str[str.index(str.startIndex, offsetBy: index)]
+       let lc = str[str.index(str.startIndex, offsetBy: n - index - 1)]
+//    var fc = str[str.startIndex]
+//       var lc = str[str.index(before: str.endIndex)]
+    if index >= n/2 {
+        return true
+    }
+   if fc != lc {
+        return false
+    }
+    return checkIfPalindrome(str, index: index+1)
+}
+let str = "Madam"
+checkIfPalindrome(str, index: 0)
 
 
 
