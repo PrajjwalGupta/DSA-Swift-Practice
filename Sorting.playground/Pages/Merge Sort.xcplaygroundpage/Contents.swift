@@ -23,7 +23,7 @@ func merge(left: [Int], right: [Int]) -> [Int] {
             merged.append(left[i])
             i += 1
         } else {
-            merged.apped(right[j])
+            merged.append(right[j])
             j += 1
         }
     }
