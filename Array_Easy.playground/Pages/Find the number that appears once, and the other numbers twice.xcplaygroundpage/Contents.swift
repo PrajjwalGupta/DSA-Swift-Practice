@@ -17,3 +17,27 @@ import Foundation
 // 4
 //Explanation:
 // In this array, only element 4 appear once and the other elements appear twice. So, 4 is the answer.
+
+//func SingleElement(arr: inout [Int]) -> Int {
+//    var singleElement = 0
+//    
+//    for num in arr {
+//        singleElement ^= num
+//    }
+//    return singleElement
+//}
+//
+//var array = [2,2,1]
+//print(SingleElement(arr: &array))
+
+func singleElement(arr: [Int]) -> Int {
+    let sortedArr = arr.sorted()
+    for i in stride(from: 0, to: sortedArr.count - 1, by: 2) {
+        if sortedArr[i] != sortedArr[i + 1] {
+            return sortedArr[i]
+        }
+    }
+    return sortedArr.last!
+}
+let array = [2, 2, 1]
+print(singleElement(arr: array))
